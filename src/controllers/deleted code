@@ -1,0 +1,37 @@
+
+function loadProjects(){ // the initial load of project when the page loads or refreshes
+    const projectsListDiv = document.querySelector('#projects-list-div');
+    if(Object.keys(Storage.listOfProjects()).length>0){
+        var arrayOfProjects = getArrayOfExistingProjects();
+        console.log(arrayOfProjects);
+        console.log(Storage.listOfProjects());
+        Object.entries(Storage.listOfProjects()).map(item => {
+          });
+        for (const element of arrayOfProjects){
+            projectsListDiv.append(ProjectElement(element.project.name, element.project.id));
+        }
+    }
+    else{
+        projectsListDiv.innerText = 'No projects Yet';
+    }
+    return projectsListDiv;
+}
+
+function loadProjects(){ // the initial load of project when the page loads or refreshes
+    const projectsListDiv = document.querySelector('#projects-list-div');
+    if(Object.keys(Storage.listOfProjects()).length>0){
+        var arrayOfProjects = getArrayOfExistingProjects();
+        console.log(arrayOfProjects);
+        console.log(Storage.listOfProjects());
+        Object.entries(Storage.listOfProjects()).map(item => {
+          });
+        for (const element of arrayOfProjects){
+            const projectsListDiv = document.querySelector('#projects-list-div');
+            projectsListDiv.append(ProjectElement(element.project.name, element.project.id));
+        }
+    }
+    else{
+        projectsListDiv.innerText = 'No projects Yet';
+    }
+    return projectsListDiv;
+}
